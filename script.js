@@ -2,6 +2,8 @@ const inputField = document.getElementById("text-input");
 const checkButton = document.getElementById("check-btn");
 const resultField = document.getElementById("result");
 
+const words = [];
+
 inputField.addEventListener("input", () => {
     resultField.innerText = "";
 })
@@ -12,6 +14,7 @@ checkButton.addEventListener("click", () => {
     } else {
         const isInputPalindrome = isPalindrome(inputField.value);
         resultField.innerHTML = inputField.value;
+        words.push(inputField.value);
         if(isInputPalindrome){
             //resultField.innerText += " is a palindrome";
             resultField.innerHTML += `
@@ -41,3 +44,18 @@ function isPalindrome(str){
     }
     return isPalindrome;
 }
+
+function createWord(){
+    if(words.length === 0){
+        return;
+    }
+    const word = document.createElement("div");
+    word.classList.add("animation-word");
+    word.textContent = words[Math.random() * words.length];
+    word.style.left = 90 + "vw";
+    word.style.animationDuration = 5 + "s";
+    document.body.appendChild(word);
+    setTimeout(() => word.remove(), 5000);
+}
+
+setInterval(createWord, 5000);
