@@ -51,8 +51,8 @@ function createWord(){
     }
     const word = document.createElement("div");
     word.classList.add("animation-word");
-    word.textContent = words[Math.random() * words.length];
-    word.style.left = 90 + "vw";
+    word.textContent = words[Math.floor(Math.random() * words.length)];
+    word.style.left = 10 + Math.random() * 90 + "vw";
     word.style.animationDuration = 5 + "s";
     document.body.appendChild(word);
     setTimeout(() => word.remove(), 5000);
