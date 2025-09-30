@@ -113,3 +113,16 @@ main {
     margin: 30px auto 0 auto;
     text-align: center;
 }
+
+.animation-word {
+    position: fixed;
+    bottom: -50px;
+    font-size: 1.5rem;
+    animation: float 5s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(0); opacity: 0.8;}
+    100% { transform: translateY(-50vh) rotate(15deg); opacity: 0;}
+}
