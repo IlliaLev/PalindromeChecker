@@ -2,6 +2,10 @@ const inputField = document.getElementById("text-input");
 const checkButton = document.getElementById("check-btn");
 const resultField = document.getElementById("result");
 
+inputField.addEventListener("input", () => {
+    resultField.innerText = "";
+})
+
 checkButton.addEventListener("click", () => {
     if(inputField.value === ""){
         alert("Please input a value");
