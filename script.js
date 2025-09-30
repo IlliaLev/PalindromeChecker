@@ -7,11 +7,17 @@ checkButton.addEventListener("click", () => {
         alert("Please input a value");
     } else {
         const isInputPalindrome = isPalindrome(inputField.value);
-        resultField.innerText = inputField.value;
+        resultField.innerHTML = inputField.value;
         if(isInputPalindrome){
-            resultField.innerText += " is a palindrome";
+            //resultField.innerText += " is a palindrome";
+            resultField.innerHTML += `
+                <span class="is-palindrome"> is</span> a palindrome
+            `;
         } else {
-            resultField.innerText += " is not a palindrome";
+            //resultField.innerText += " is not a palindrome";
+            resultField.innerHTML += `
+                <span class="not-palindrome"> is not</span> a palindrome
+            `;
         }
     }
 });
